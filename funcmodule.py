@@ -75,6 +75,8 @@ def play(stdscr):
     file = open("./codes/" + str(file_id) + ".txt","r")
     code_file = []
     for line in file.readlines():
+        if(len(line) == 1):
+            continue;
         code_file.append(line)
     file.close()
 
