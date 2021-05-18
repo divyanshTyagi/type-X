@@ -1,0 +1,5 @@
+
+if (s1.empty() || s2.empty()) 
+    minimum = s1.empty() ? s2.top().second : s1.top().second;
+else
+    minimum = min(s1.top().second, s2.top().second);

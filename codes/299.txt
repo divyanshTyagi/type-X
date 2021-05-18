@@ -1,0 +1,8 @@
+
+int ans = a[0], sum = 0;
+
+for (int r = 0; r < n; ++r) {
+    sum += a[r];
+    ans = max(ans, sum);
+    sum = max(sum, 0);
+}

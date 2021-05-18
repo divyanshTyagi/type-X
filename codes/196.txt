@@ -1,0 +1,8 @@
+
+int get(ftype x) {
+    point query = {x, 1};
+    auto it = lower_bound(vecs.begin(), vecs.end(), query, [](point a, point b) {
+        return cross(a, b) > 0;
+    });
+    return dot(query, hull[it - vecs.begin()]);
+}

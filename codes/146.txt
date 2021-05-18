@@ -1,0 +1,2 @@
+
+int st[MAXN][K + 1];

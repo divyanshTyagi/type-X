@@ -1,0 +1,4 @@
+
+while (!q.empty() && q.back() > new_element)
+    q.pop_back();
+q.push_back(new_element);

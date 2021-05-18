@@ -1,0 +1,5 @@
+
+int log[MAXN+1];
+log[1] = 0;
+for (int i = 2; i <= MAXN; i++)
+    log[i] = log[i/2] + 1;

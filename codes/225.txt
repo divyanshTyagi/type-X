@@ -1,0 +1,3 @@
+
+if (d[i][k] + d[k][j] < d[i][j] - EPS)
+    d[i][j] = d[i][k] + d[k][j]; 

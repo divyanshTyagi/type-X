@@ -1,0 +1,13 @@
+
+typedef int ftype;
+typedef complex<ftype> point;
+#define x real
+#define y imag
+ 
+ftype dot(point a, point b) {
+	return (conj(a) * b).x();
+}
+ 
+ftype cross(point a, point b) {
+	return (conj(a) * b).y();
+}

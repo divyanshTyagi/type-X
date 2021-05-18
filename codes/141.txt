@@ -1,0 +1,27 @@
+
+void update_y(int vx, int lx, int rx, int vy, int ly, int ry, int x, int y, int new_val) {
+    if (ly == ry) {
+        if (lx == rx)
+            t[vx][vy] = new_val;
+        else
+            t[vx][vy] = t[vx*2][vy] + t[vx*2+1][vy];
+    } else {
+        int my = (ly + ry) / 2;
+        if (y <= my)
+            update_y(vx, lx, rx, vy*2, ly, my, x, y, new_val);
+        else
+            update_y(vx, lx, rx, vy*2+1, my+1, ry, x, y, new_val);
+        t[vx][vy] = t[vx][vy*2] + t[vx][vy*2+1];
+    }
+}
+
+void update_x(int vx, int lx, int rx, int x, int y, int new_val) {
+    if (lx != rx) {
+        int mx = (lx + rx) / 2;
+        if (x <= mx)
+            update_x(vx*2, lx, mx, x, y, new_val);
+        else
+            update_x(vx*2+1, mx+1, rx, x, y, new_val);
+    }
+    update_y(vx, lx, rx, 1, 0, m-1, x, y, new_val);
+}

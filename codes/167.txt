@@ -1,0 +1,5 @@
+
+while (!q.empty() && q.back().first > new_element)
+    q.pop_back();
+q.push_back({new_element, cnt_added});
+cnt_added++;

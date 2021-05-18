@@ -1,0 +1,7 @@
+
+function reduce(x):
+    q = (x mod r) * n' mod r
+    a = (x - q * n) / r
+    if a < 0:
+        a += n
+    return a

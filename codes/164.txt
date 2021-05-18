@@ -1,0 +1,3 @@
+
+if (!q.empty() && q.front() == remove_element)
+    q.pop_front();

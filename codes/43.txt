@@ -1,0 +1,8 @@
+
+function floyd(f, x0):
+    tortoise = x0
+    hare = f(x0)
+    while tortoise != hare:
+        tortoise = f(tortoise)
+        hare = f(f(hare))
+    return true

@@ -1,0 +1,9 @@
+
+int cnt (pitem t) {
+	return t ? t->cnt : 0;
+}
+
+void upd_cnt (pitem t) {
+	if (t)
+		t->cnt = 1 + cnt(t->l) + cnt (t->r);
+}

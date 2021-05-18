@@ -1,0 +1,3 @@
+
+int removed_element = st.top().first;
+st.pop();

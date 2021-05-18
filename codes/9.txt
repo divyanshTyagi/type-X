@@ -1,0 +1,6 @@
+
+for (int i=(int)s.length(); i>0; i-=9)
+	if (i < 9)
+		a.push_back (atoi (s.substr (0, i).c_str()));
+	else
+		a.push_back (atoi (s.substr (i-9, 9).c_str()));

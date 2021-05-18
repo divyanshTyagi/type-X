@@ -1,0 +1,11 @@
+
+if (s2.empty()) {
+    while (!s1.empty()) {
+        int element = s1.top().first;
+        s1.pop();
+        int minimum = s2.empty() ? element : min(element, s2.top().second);
+        s2.push({element, minimum});
+    }
+}
+int remove_element = s2.top().first;
+s2.pop();

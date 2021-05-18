@@ -1,0 +1,3 @@
+
+int new_min = st.empty() ? new_elem : min(new_elem, st.top().second);
+st.push({new_elem, new_min});

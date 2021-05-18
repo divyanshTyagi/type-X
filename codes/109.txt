@@ -1,0 +1,7 @@
+
+struct Query {
+    int L, R, idx;
+};
+
+vector<int> answer;
+vector<vector<Query>> container;

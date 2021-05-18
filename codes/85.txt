@@ -1,0 +1,4 @@
+
+long long binomial_coefficient(int n, int k) {
+    return factorial[n] * inverse(factorial[k] * factorial[n - k] % m) % m;
+}

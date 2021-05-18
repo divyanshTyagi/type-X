@@ -1,0 +1,20 @@
+
+struct state {
+    ...
+    bool is_clone;
+    int first_pos;
+    vector<int> inv_link;
+};
+
+// after constructing the automaton
+for (int v = 1; v < sz; v++) {
+    st[st[v].link].inv_link.push_back(v);
+}
+
+// output all positions of occurrences
+void output_all_occurrences(int v, int P_length) {
+    if (!st[v].is_clone)
+        cout << st[v].first_pos - P_length + 1 << endl;
+    for (int u : st[v].inv_link)
+        output_all_occurrences(u, P_length);
+}

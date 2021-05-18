@@ -1,0 +1,8 @@
+
+long long sum = 0;
+for (int j = K; j >= 0; j--) {
+    if ((1 << j) <= R - L + 1) {
+        sum += st[L][j];
+        L += 1 << j;
+    }
+}

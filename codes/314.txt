@@ -1,0 +1,2 @@
+
+while (!op.empty() && priority(op.top()) >= priority(cur_op))

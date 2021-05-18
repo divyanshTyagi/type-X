@@ -1,0 +1,4 @@
+
+if (!q.empty() && q.front().second == cnt_removed) 
+    q.pop_front();
+cnt_removed++;

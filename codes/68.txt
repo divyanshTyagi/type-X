@@ -1,0 +1,5 @@
+
+template<typename T>
+T gcd(const T &a, const T &b) {
+	return b == T(0) ? a : gcd(b, a % b);
+}

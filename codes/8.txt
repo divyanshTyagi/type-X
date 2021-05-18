@@ -1,0 +1,4 @@
+
+printf ("%d", a.empty() ? 0 : a.back());
+for (int i=(int)a.size()-2; i>=0; --i)
+	printf ("%09d", a[i]);

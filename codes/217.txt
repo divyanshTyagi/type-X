@@ -1,0 +1,23 @@
+
+struct pt {
+    double x, y;
+
+    pt operator- (pt p) {
+        pt res = { x-p.x, y-p.y };
+        return res;
+    }
+};
+
+struct circle : pt {
+    double r;
+};
+
+struct line {
+    double a, b, c;
+};
+
+const double EPS = 1E-9;
+
+double sqr (double a) {
+    return a * a;
+}

@@ -1,0 +1,3 @@
+
+int minimum = s1.empty() ? new_element : min(new_element, s1.top().second);
+s1.push({new_element, minimum});

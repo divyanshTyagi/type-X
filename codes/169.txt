@@ -1,0 +1,2 @@
+
+stack<pair<int, int>> s1, s2;

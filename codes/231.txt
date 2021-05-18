@@ -1,0 +1,2 @@
+
+d[e[j].b] = max (-INF, d[e[j].a] + e[j].cost);
