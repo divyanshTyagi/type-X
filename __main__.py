@@ -14,9 +14,9 @@ def main():
     output = render('Type X', colors=['red', 'yellow'], align='center')
     print(output)
     time.sleep(2)
-    pygame.mixer.init()
-    pygame.mixer.music.load("music.mp3")
-    pygame.mixer.music.play()
+    # pygame.mixer.init()
+    # pygame.mixer.music.load("music.mp3")
+    # pygame.mixer.music.play()
     interact()
 
 
