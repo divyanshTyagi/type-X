@@ -38,8 +38,8 @@ def simulate_menu(stdscr): #Simulates the menu screen, involving navigation
             stdscr.clear()
             if(menu[current_row] == "Play"): # start the game
                 play(stdscr)
-            elif (menu[current_row] == 'Credits'): # show the credits
-                credit(stdscr)
+            # elif (menu[current_row] == 'Credits'): # show the credits
+            #     credit(stdscr)
             else:
                 stdscr.addstr(0,0,"opened {}".format(menu[current_row])) # This is if the selected option has not been configured yet
                 stdscr.refresh()
