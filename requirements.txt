@@ -1,0 +1,8 @@
+numpy==1.19.5
+requests==2.24.0
+pandas==1.2.4
+colorama==0.4.4
+pygame==2.0.1
+regex==2021.4.4
+blessed==1.18.0
+beautifulsoup4==4.9.3

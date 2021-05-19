@@ -1,6 +1,6 @@
 getTextResponse.py
 resp_text.txt
 extractTextFromResponse.py
-curses_help.py
+curses_help.txt
 addLater.py
 __pycache__
