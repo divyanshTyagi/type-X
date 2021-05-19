@@ -165,7 +165,7 @@ def play(stdscr):
                     stdscr.attroff(curses.color_pair(2))
     time_end = time.time()
     stdscr.clear()
-    verdict = "Hurray! Your time of completion was {} seconds, I last longer than that he he".format(int(time_end - time_start))
+    verdict = "Hurray! Your time of completion was {} seconds".format(int(time_end - time_start))
     cpm = "CPM -- {}".format(int(60*totalCharacters)/(time_end-time_start))
     (y,x) = (h//2,w//2 - len(verdict)//2)
     stdscr.addstr(y,x,verdict)
