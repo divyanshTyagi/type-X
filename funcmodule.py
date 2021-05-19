@@ -1,3 +1,4 @@
+import os
 import time
 import sys
 import curses
@@ -71,8 +72,9 @@ def print_menu(stdscr,menu,selected_row):
 def play(stdscr):
 
     #deciding the texts
-    file_id = random.randint(0,349)
-    file = open("./codes/" + str(file_id) + ".txt","r")
+    basedir = "./codes/"
+    file_name = random.choice(os.listdir(basedir))
+    file = open("./codes/" + file_name,"r")
     code_file = []
     for line in file.readlines():
         if(len(line) == 1):
