@@ -12,56 +12,62 @@ code_file = []
 
 
 ################################################ MENU ###############################################
-def simulate_menu(stdscr):
+
+def simulate_menu(stdscr): #Simulates the menu screen, involving navigation
+    # Menu options
     menu =  ["Play","Scores","Credits","Exit"]
-    #navigating the print_menu
-    current_row = 0
+
+    current_row = 0 # Point to the current option
+
 
     print_menu(stdscr,menu,current_row)
 
     while 1:
-        key = stdscr.getch()
+        key = stdscr.getch() # get user navigation input
 
         # clear existing texts
         stdscr.clear()
 
         if key == curses.KEY_UP:
-            current_row = max(0,current_row-1)
+            current_row = max(0,current_row-1) # move up
         elif key == curses.KEY_DOWN:
-            current_row = min(len(menu)-1,current_row+1)
-        elif key == curses.KEY_ENTER or key in [10, 13]:
-            if(menu[current_row] == "Exit"):
+            current_row = min(len(menu)-1,current_row+1) # move down
+        elif key == curses.KEY_ENTER or key in [10, 13]: # open the selected menu
+            if(menu[current_row] == "Exit"): # exit
                 exit()
             stdscr.clear()
-            if(menu[current_row] == "Play"):
+            if(menu[current_row] == "Play"): # start the game
                 play(stdscr)
-            elif (menu[current_row] == 'Credits'):
+            elif (menu[current_row] == 'Credits'): # show the credits
                 credit(stdscr)
             else:
-                stdscr.addstr(0,0,"opened {}".format(menu[current_row]))
+                stdscr.addstr(0,0,"opened {}".format(menu[current_row])) # This is if the selected option has not been configured yet
                 stdscr.refresh()
                 stdscr.getch()
             stdscr.clear()
 
+        # once returned from the option print the menu again
         print_menu(stdscr,menu,current_row)
 
         # update screen
         stdscr.refresh()
 
-def print_menu(stdscr,menu,selected_row):
+def print_menu(stdscr,menu,selected_row): # selected row is the option over which the user is navigating
 
+    #get the height and width of the console
     (h,w) = stdscr.getmaxyx()
+
 
     curses.init_pair(1,curses.COLOR_RED,curses.COLOR_YELLOW) # pair of foreground and background color
 
 
-    for i in range(len(menu)):
+    for i in range(len(menu)): #iterate over each option
         if(i == selected_row):
-            stdscr.attron(curses.color_pair(1))
+            stdscr.attron(curses.color_pair(1)) # set the color to highligh the selected row
         text = menu[i]
-        x = w//2-len(text)//2
-        y = h//2 - (len(menu)//2) + i
-        stdscr.addstr(y,x,text)
+        x = w//2-len(text)//2 # center of the screen horizontally
+        y = h//2 - (len(menu)//2) + i # aligning vertically
+        stdscr.addstr(y,x,text) # print the menu
         stdscr.attroff(curses.color_pair(1))
     stdscr.refresh()
 
